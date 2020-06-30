@@ -1,0 +1,16 @@
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\IQuesoftTask.DAL.dll.config
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\IQuesoftTask.DAL.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\IQuesoftTask.DAL.pdb
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\obj\Debug\IQuesoftTask.DAL.csprojAssemblyReference.cache
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\obj\Debug\IQuesoftTask.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\obj\Debug\IQuesoftTask.DAL.csproj.CopyComplete
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\obj\Debug\IQuesoftTask.DAL.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\obj\Debug\IQuesoftTask.DAL.pdb
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoftTask.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

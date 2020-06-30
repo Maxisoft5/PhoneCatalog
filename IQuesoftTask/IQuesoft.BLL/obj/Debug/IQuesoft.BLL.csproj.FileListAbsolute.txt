@@ -1,0 +1,6 @@
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\bin\Debug\IQuesoft.BLL.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\bin\Debug\IQuesoft.BLL.pdb
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\obj\Debug\IQuesoft.BLL.csprojAssemblyReference.cache
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\obj\Debug\IQuesoft.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\obj\Debug\IQuesoft.BLL.dll
+C:\Users\Maxisoft\source\repos\IQuesoftTask\IQuesoft.BLL\obj\Debug\IQuesoft.BLL.pdb

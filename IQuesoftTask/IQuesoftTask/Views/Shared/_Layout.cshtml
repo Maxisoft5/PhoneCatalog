@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="~/Scripts/DALScritps.js"></script>
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-dark">
+        <a class="navbar-brand pl-5 ml-5 mr-n5 pr-n5 " href="#"><h1 id="logo">Phone Catalog</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex w-100 justify-content-center">
+                <ul class="navbar-nav ml-n5 pr-5 w-20" id="tablesNav">
+                    <li class="nav-item" id="purchase">
+                        <div id="purchaseid" class="tables">
+                            @Ajax.ActionLink("Purchases", "PurchasePartial", new AjaxOptions { UpdateTargetId = "purchaseid" })
+                        </div>
+                    </li>
+                    <li class="nav-item" id="seller">
+                        <div id="sellerid" class="tables">
+                            @Ajax.ActionLink("Sellers", "SellerPartial", new AjaxOptions { UpdateTargetId = "sellerid" })
+                        </div>
+                    </li>
+                    <li class="nav-item" id="product">
+                        <div id="productid" class="tables">
+                            @Ajax.ActionLink("Products", "ProductPartial", new AjaxOptions { UpdateTargetId = "productid" })
+                        </div>
+                    </li>
+                    <li class="nav-item" id="branch">
+                        <div id="branchid" class="tables">
+                            @Ajax.ActionLink("Branches", "BranchPartial", new AjaxOptions { UpdateTargetId = "branchid" })
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn bg-dark text-white rounded-0 my-2 my-sm-0" id="loginBtw" type="submit">Login</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn bg-dark text-white rounded-0 my-2 my-sm-0" id="registerBtw" type="submit">Register</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Phone catalog</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/scripts/jquery-1.10.2.js")
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/notify.min.js"></script>
+    <script src="~/Scripts/notify.js"></script>
+    <script src="~/Scripts/DALScritps.js"></script>
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

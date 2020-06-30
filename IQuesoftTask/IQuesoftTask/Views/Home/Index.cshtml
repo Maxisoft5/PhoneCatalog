@@ -1,0 +1,134 @@
+﻿@model IQuesoftTask.DAL.Models.Product
+@{
+    ViewBag.Title = "Phone Catalog";
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="~/Scripts/DALScritps.js"></script>
+}
+<title>Phone Catalog</title>
+<div class="container">
+    <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+            <table id="productTable" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ManufacturerName</th>
+                        <th>DateManufacture</th>
+                        <th>Price</th>
+                        <th>BranchId</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="p-2 bd-highlight">
+            <a class="btn btn-success" id="addNew" style="margin-bottom:10px" onclick="PopupForm('@Url.Action("AddEditProduct","Home")')"><i class="fa fa-plus"></i> Add New</a>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script>
+            var Popup, dataTable;
+            $.extend($.fn.dataTable.defaults, {
+                searching: false,
+                paging: false,
+                info: false
+            });
+            $(document).ready(function () {
+                dataTable =  $("#productTable").DataTable({
+                    "ajax": {
+                        "url": "/Home/GetProducts",
+                        "type": "GET",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "Name" },
+                        { "data": "ManufacturerName" },
+                        { "data": "DateManufacture" },
+                        { "data": "Price" },
+                        { "data": "BranchId" },
+                        { "data": "Id", "render": function (data) {
+                           return "<a class='btn btn-danger btn-sm' style='margin-left:5px' onclick=Delete(" + data + ")><i class='fa fa-trash'></i> Delete</a>";
+                        },
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "150px"
+                        }
+                    ],
+                    "language": {
+
+                        "emptyTable" : "No data found, Please click on <b>Add New</b> Button"
+                    }
+                });
+            });
+
+            function PopupForm(url) {
+                var formDiv = $('<div/>');
+                $.get(url)
+                .done(function (response) {
+                    formDiv.html(response);
+
+                    Popup = formDiv.dialog({
+                        autoOpen: true,
+                        resizable: false,
+                        title: 'Fill Product Details',
+                        height: 500,
+                        width: 500,
+                        close: function () {
+                            Popup.dialog('destroy').remove();
+                        }
+                    });
+                });
+            }
+
+           function SubmitForm(form) {
+                $.validator.unobtrusive.parse(form);
+                if($(form).valid()){
+                    $.ajax({
+                        type : "POST",
+                        url : form.action,
+                        data : $(form).serialize(),
+                        success : function (data) {
+                            if(data.success)
+                            {
+                                Popup.dialog('close');
+                                dataTable.ajax.reload();
+
+                                $.notify(data.message,{
+                                    globalPosition :"top center",
+                                    className : "success"
+                                })
+
+                            }
+                        }
+                    });
+                }
+                return false;
+            }
+            function Delete(id) {
+                if (confirm('Are You Sure to Delete this Product Record ?'))
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("Delete","Home")/' + id,
+                        success: function (data) {
+                            if (data.success)
+                            {
+                                dataTable.ajax.reload();
+                                $.notify(data.message, {
+                                    globalPosition: "top center",
+                                    className: "success"
+                                })
+                            }
+                        }
+                    });
+                }
+            }
+    </script>
+}
